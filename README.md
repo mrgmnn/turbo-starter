@@ -15,7 +15,7 @@ A modern full-stack monorepo starter featuring NestJS API with Vite for fast dev
 
 ### Prerequisites
 
-- Node.js 18+
+- Node.js 18+ (we recommend using [nodenv](https://github.com/nodenv/nodenv) with version 24.1.0)
 - npm/pnpm/yarn
 
 ### Installation
@@ -224,6 +224,7 @@ The `DATABASE_URL` connects to the PostgreSQL container started with Docker Comp
 - [Turborepo Documentation](https://turborepo.com/docs)
 - [Vite Documentation](https://vitejs.dev/)
 - [Prisma Documentation](https://www.prisma.io/docs)
+- [nodenv Documentation](https://github.com/nodenv/nodenv)
 
 ## License
 
