@@ -17,6 +17,8 @@ A modern full-stack monorepo starter featuring NestJS API with Vite for fast dev
 
 - Node.js 18+ (we recommend using [nodenv](https://github.com/nodenv/nodenv) with version 24.1.0)
 - npm/pnpm/yarn
+- Docker and Docker Compose (for PostgreSQL database)
+- Git (for cloning the repository)
 
 ### Installation
 
@@ -199,6 +201,24 @@ npm run lint         # Lint all packages
 npm run format       # Format all code
 ```
 
+## Testing
+
+### Run Tests
+
+```sh
+# Run unit tests for API
+npm run test --filter=api
+
+# Run tests in watch mode
+npm run test:watch --filter=api
+
+# Run tests with coverage
+npm run test:cov --filter=api
+
+# Run e2e tests
+npm run test:e2e --filter=api
+```
+
 ## Environment Variables
 
 Create a `.env` file in `apps/api/`:
@@ -216,6 +236,62 @@ DATABASE_URL="postgresql://postgres:postgres@localhost:5432/turbostarter?schema=
 ```
 
 The `DATABASE_URL` connects to the PostgreSQL container started with Docker Compose.
+
+## Troubleshooting
+
+### Port Already in Use
+
+If you see an error like `Error: listen EADDRINUSE: address already in use :::3000`:
+
+```sh
+# Find and kill the process using the port
+lsof -ti:3000 | xargs kill -9
+```
+
+### Database Connection Issues
+
+If Prisma can't connect to the database:
+
+1. **Check if PostgreSQL container is running**:
+
+   ```sh
+   docker ps
+   ```
+
+2. **Restart the container**:
+
+   ```sh
+   docker-compose down
+   docker-compose up -d
+   ```
+
+3. **Verify the database exists**:
+
+   ```sh
+   docker exec -it postgres psql -U postgres -l
+   ```
+
+4. **Check your `.env` files** - Make sure both `apps/api/.env` and `packages/prisma/.env` have the correct `DATABASE_URL`
+
+### Prisma Client Not Generated
+
+If you see `Cannot find module '@prisma/client'`:
+
+```sh
+npx prisma generate
+```
+
+### Module Resolution Errors
+
+If you encounter module resolution issues:
+
+```sh
+# Clean install
+rm -rf node_modules
+rm -rf apps/*/node_modules
+rm -rf packages/*/node_modules
+npm install
+```
 
 ## Learn More
 
