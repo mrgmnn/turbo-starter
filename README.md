@@ -163,21 +163,23 @@ npm run start:prod --filter=api
 ```
 ├── apps/
 │   ├── api/          # NestJS API with Vite
-│   ├── docs/         # Next.js documentation site
 │   └── web/          # Next.js web application
 ├── packages/
-│   ├── ui/           # Shared React component library
+│   ├── ui/           # Shared UI component library with shadcn/ui
 │   ├── prisma/       # Prisma schema and database client
 │   ├── eslint-config/    # Shared ESLint configurations
 │   └── typescript-config/ # Shared TypeScript configurations
 ├── docker-compose.yml    # PostgreSQL container configuration
+├── screenshot.png    # Project screenshot
 └── turbo.json        # Turborepo configuration
 ```
 
 ### Apps and Packages
 
 - **`api`**: [NestJS](https://nestjs.com/) REST API with Vite for development
-- **`web`**: [Next.js](https://nextjs.org/) web application with React 19 and Tailwind CSS
+- **`web`**: [Next.js](https://nextjs.org/) web application with React 19, Tailwind CSS v4, and shadcn/ui
+- **`@repo/ui`**: Shared UI component library with shadcn/ui components
+- **`@repo/prisma`**: Prisma schema and generated client
 - **`@repo/prisma`**: Prisma schema and generated client
 - **`@repo/eslint-config`**: ESLint configurations
 - **`@repo/typescript-config`**: TypeScript configurations
