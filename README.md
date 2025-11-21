@@ -18,7 +18,7 @@ A modern full-stack monorepo starter featuring NestJS API with Vite for fast dev
 ### Prerequisites
 
 - Node.js 18+ (we recommend using [nodenv](https://github.com/nodenv/nodenv) with version 24.1.0)
-- npm/pnpm/yarn
+- npm (package manager)
 - Docker and Docker Compose (for PostgreSQL database)
 - Git (for cloning the repository)
 
