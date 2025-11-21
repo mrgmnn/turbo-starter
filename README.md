@@ -224,6 +224,44 @@ Using Vite in this monorepo setup enables Just-in-Time (JIT) compilation for sha
 - 🔄 No build step needed for packages during development
 - 📦 Seamless integration between apps and shared packages
 
+## Fonts with Fontsource
+
+This project uses [Fontsource](https://fontsource.org/) for self-hosted font management. Fontsource provides optimized, self-hosted fonts that don't require external CDN requests.
+
+### Current Font
+
+The web app uses **Source Sans Pro** in multiple weights (300, 400, 900).
+
+### Adding a New Font
+
+1. Install the font package:
+
+   ```sh
+   npm install @fontsource/<font-name> -w web
+   ```
+
+2. Import the font weights in `apps/web/app/globals.css`:
+
+   ```css
+   @import '@fontsource/source-sans-pro/300.css';
+   @import '@fontsource/source-sans-pro/400.css';
+   @import '@fontsource/source-sans-pro/900.css';
+   ```
+
+3. Update the font family:
+   ```css
+   body {
+     font-family: 'Source Sans Pro', sans-serif;
+   }
+   ```
+
+### Benefits
+
+- **Performance**: Fonts are bundled and served from your domain
+- **Privacy**: No third-party requests to Google Fonts or other CDNs
+- **Reliability**: No dependency on external services
+- **Optimization**: Only load the weights and subsets you need
+
 ## Scripts
 
 ```sh
@@ -325,6 +363,7 @@ npm install
 - [Vite Documentation](https://vitejs.dev/)
 - [Prisma Documentation](https://www.prisma.io/docs)
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [Fontsource](https://fontsource.org/)
 - [nodenv Documentation](https://github.com/nodenv/nodenv)
 
 ## License

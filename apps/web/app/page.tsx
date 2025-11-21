@@ -3,7 +3,7 @@ import { ModeToggle } from '../components/mode-toggle';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center font-sans">
+    <div className="flex min-h-screen items-center justify-center">
       <main className="relative flex min-h-screen w-full max-w-4xl flex-col items-center justify-center gap-16 px-6 py-16 sm:px-8">
         <div className="absolute top-8 right-8">
           <ModeToggle />
@@ -12,26 +12,26 @@ export default function Home() {
         <div className="flex flex-col items-center gap-8 text-center">
           <div className="flex items-center gap-4">
             <div className="text-5xl">⚡</div>
-            <h1 className="text-4xl font-bold tracking-tight">Turbo Starter</h1>
+            <h1 className="text-5xl font-black tracking-tight">Turbo Starter</h1>
           </div>
 
           <div className="flex max-w-2xl flex-col gap-4">
-            <h2 className="text-2xl font-semibold text-muted-foreground">Modern full-stack monorepo starter</h2>
-            <p className="text-lg leading-relaxed text-muted-foreground">
+            <h2 className="text-2xl font-normal text-muted-foreground">Modern full-stack monorepo starter</h2>
+            <p className="text-lg font-light leading-relaxed text-muted-foreground">
               Built with NestJS, Next.js, Prisma, and PostgreSQL. Features blazing-fast development with Vite HMR, JIT
               compilation for shared packages, and Turborepo caching.
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-3 text-sm">
+          <div className="flex flex-wrap items-center justify-center gap-3 text-sm font-normal">
             <div className="flex items-center gap-2 rounded-lg border px-3 py-1.5">
-              <span className="font-medium">API:</span>
+              <span className="font-normal">API:</span>
               <a href="http://localhost:3000" className="hover:underline" target="_blank" rel="noopener noreferrer">
                 localhost:3000
               </a>
             </div>
             <div className="flex items-center gap-2 rounded-lg border px-3 py-1.5">
-              <span className="font-medium">Web:</span>
+              <span className="font-normal">Web:</span>
               <a href="http://localhost:8000" className="hover:underline" target="_blank" rel="noopener noreferrer">
                 localhost:8000
               </a>
@@ -39,7 +39,7 @@ export default function Home() {
           </div>
         </div>
 
-        <Button size="lg" asChild>
+        <Button size="lg" className="font-normal" asChild>
           <a href="https://github.com/mrgmnn/turbo-starter" target="_blank" rel="noopener noreferrer">
             <svg className="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 24 24">
               <path

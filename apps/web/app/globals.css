@@ -1,2 +1,9 @@
 @import 'tailwindcss';
 @import '@repo/ui/globals.css';
+@import '@fontsource/source-sans-pro/300.css';
+@import '@fontsource/source-sans-pro/400.css';
+@import '@fontsource/source-sans-pro/900.css';
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
