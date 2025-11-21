@@ -13,7 +13,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "prisma generate",
-    "dev": "prisma generate --watch"
+    "dev": "prisma generate",
+    "watch": "prisma generate --watch"
   },
   "devDependencies": {
     "@types/node": "^22.19.0",

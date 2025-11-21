@@ -109,22 +109,22 @@ The `DATABASE_URL` connects to the PostgreSQL container started with Docker Comp
 
 ### Development
 
-Run all apps in development mode:
+Run all apps in development mode (including Prisma watcher):
 
 ```sh
 npm run dev
 ```
 
-Run the API:
+Run the API with Prisma watcher:
 
 ```sh
-npm run dev --filter=api
+npm run dev:api
 ```
 
 Run the web app:
 
 ```sh
-npm run dev --filter=web
+npm run dev:web
 ```
 
 #### Development Ports
@@ -144,10 +144,11 @@ Build all apps and packages:
 npm run build
 ```
 
-Build the API:
+Build specific apps:
 
 ```sh
-npm run build --filter=api
+npx turbo build --filter=api
+npx turbo build --filter=web
 ```
 
 ### Production

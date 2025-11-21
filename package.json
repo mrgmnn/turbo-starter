@@ -3,7 +3,10 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
-    "dev": "turbo run dev",
+    "dev": "turbo run dev watch",
+    "dev:api": "turbo run dev watch --filter=api --filter=@repo/prisma",
+    "dev:web": "turbo run dev --filter=web",
+    "dev:prisma": "turbo run watch --filter=@repo/prisma",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types"

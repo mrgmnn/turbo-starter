@@ -23,5 +23,8 @@
   "[scss]": {
     "editor.defaultFormatter": "vscode.css-language-features"
   },
-  "eslint.useFlatConfig": true
+  "eslint.useFlatConfig": true,
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  }
 }
