@@ -31,6 +31,16 @@ npm install
 
 log "\n✅ Dependencies installed successfully" "$GREEN"
 
+# Step 1.1: First-time Prisma client build
+# Only generate if the client hasn't been generated yet
+if [ ! -f "$ROOT_DIR/packages/prisma/generated/client.ts" ]; then
+    log "\n🛠️ Generating Prisma client (first-time)..." "$BLUE"
+    npm run -w @repo/prisma build
+    log "\n✅ Prisma client generated" "$GREEN"
+else
+    log "\nℹ️ Prisma client already present, skipping generate" "$BLUE"
+fi
+
 # Step 2: Run database setup
 log "\n📋 Starting database setup..." "$BLUE"
 npm run setup:db

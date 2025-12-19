@@ -31,7 +31,7 @@ git clone https://github.com/mrgmnn/turbo-starter.git
 # Navigate to the project
 cd turbo-starter
 
-# Run bootstrap (installs dependencies and sets up database)
+# Run bootstrap (installs dependencies, builds Prisma client on first run, and sets up database)
 npm run bootstrap
 # or use the shell script: ./scripts/bootstrap.sh
 ```
@@ -39,11 +39,12 @@ npm run bootstrap
 The bootstrap process will:
 
 1. Install all npm dependencies
-2. Check if Docker is running and start PostgreSQL if needed
-3. Prompt for a project name (default: "turbo-starter")
-4. Update `package.json` with the project name
-5. Create the database (derived from project name)
-6. Generate and add `DATABASE_URL` to `.env` files in `apps/api/` and `packages/prisma/`
+2. Generate the Prisma client on first run (so dev doesn't fail if Prisma wasn't built yet)
+3. Check if Docker is running and start PostgreSQL if needed
+4. Prompt for a project name (default: "turbo-starter")
+5. Update `package.json` with the project name
+6. Create the database (derived from project name)
+7. Generate and add `DATABASE_URL` to `.env` files in `apps/api/` and `packages/prisma/`
 
 #### Next Steps
 
@@ -69,6 +70,9 @@ docker exec -it postgres psql -U postgres -c "CREATE DATABASE turbostarter;"
 
 # Create .env files with DATABASE_URL in apps/api/ and packages/prisma/
 DATABASE_URL="postgresql://postgres:postgres@localhost:5432/turbostarter?schema=public"
+
+# First-time Prisma client build (if you didn't run bootstrap)
+npm run -w @repo/prisma build
 
 # Run migrations
 npx prisma migrate dev --name init
