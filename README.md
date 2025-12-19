@@ -63,7 +63,7 @@ If you prefer manual setup:
 
 ```sh
 # Start PostgreSQL
-docker-compose up -d
+docker compose up -d
 
 # Create database
 docker exec -it postgres psql -U postgres -c "CREATE DATABASE turbostarter;"
@@ -162,7 +162,6 @@ npm run start:prod --filter=api
 - **`api`**: [NestJS](https://nestjs.com/) REST API with Vite for development
 - **`web`**: [Next.js](https://nextjs.org/) web application with React 19, Tailwind CSS v4, and shadcn/ui
 - **`@repo/ui`**: Shared UI component library with shadcn/ui components
-- **`@repo/prisma`**: Prisma schema and generated client
 - **`@repo/prisma`**: Prisma schema and generated client
 - **`@repo/eslint-config`**: ESLint configurations
 - **`@repo/typescript-config`**: TypeScript configurations

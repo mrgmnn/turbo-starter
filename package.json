@@ -12,7 +12,9 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types",
     "setup:db": "node scripts/setup-db.js",
-    "bootstrap": "npm install && npm run -w @repo/prisma build && npm run setup:db"
+    "bootstrap": "npm install && npm run setup:db",
+    "lint:web": "turbo run lint --filter=web",
+    "lint:api": "turbo run lint --filter=api"
   },
   "devDependencies": {
     "dotenv-cli": "^11.0.0",

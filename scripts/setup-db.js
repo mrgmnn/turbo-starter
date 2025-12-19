@@ -119,7 +119,7 @@ function isPostgresRunning() {
 function startPostgres() {
   log('\n📦 Starting PostgreSQL container...', colors.blue);
   try {
-    execSync('docker-compose up -d', {
+    execSync('docker compose up -d', {
       cwd: ROOT_DIR,
       stdio: 'inherit',
     });
@@ -262,7 +262,7 @@ async function main() {
     log('\n' + '-'.repeat(60), colors.cyan);
     const projectName = await question(
       rl,
-      `${colors.bright}Enter project name${colors.reset} (default: turbo-starter): `
+      `${colors.bright}Enter project name${colors.reset} (default: turbo-starter): `,
     );
     const rawProjectName = projectName.trim() || 'turbo-starter';
 

@@ -72,7 +72,7 @@ This is a modern full-stack monorepo starter built with Turborepo. It features:
 
 ```bash
 npm install              # Install all dependencies
-docker-compose up -d     # Start PostgreSQL
+docker compose up -d     # Start PostgreSQL
 npm run dev              # Run all apps in dev mode
 ```
 
